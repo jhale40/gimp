@@ -35,6 +35,7 @@
 
 #include <libgimp/stdplugins-intl.h>
 
+#include "bc7enc.h"
 #include "dds.h"
 #include "ddswrite.h"
 #include "dxt.h"
