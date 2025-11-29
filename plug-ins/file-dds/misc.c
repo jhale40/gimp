@@ -132,7 +132,7 @@ decode_ycocg_scaled (GimpDrawable *drawable)
 
   gegl_buffer_get (buffer, GEGL_RECTANGLE (0, 0, w, h), 1.0, format, data,
                    GEGL_AUTO_ROWSTRIDE, GEGL_ABYSS_NONE);
-                   
+
   /* Translators: Do not translate YCoCg, it's the name of a colorspace */
   gimp_progress_init (_("Decoding YCoCg (scaled) pixels..."));
 

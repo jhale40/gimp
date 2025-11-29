@@ -18,10 +18,10 @@ typedef struct
 {
 	// m_max_partitions_mode may range from 0 (disables mode 1) to BC7ENC_MAX_PARTITIONS1. The higher this value, the slower the compressor, but the higher the quality.
 	uint32_t m_max_partitions_mode;
-	
+
 	// Relative RGBA or YCbCrA weights.
 	uint32_t m_weights[4];
-	
+
 	// m_uber_level may range from 0 to BC7ENC_MAX_UBER_LEVEL. The higher this value, the slower the compressor, but the higher the quality.
 	uint32_t m_uber_level;
 
@@ -30,7 +30,7 @@ typedef struct
 
 	// Set m_try_least_squares to false for slightly faster/lower quality compression.
 	bc7enc_bool m_try_least_squares;
-	
+
 	// When m_mode_partition_estimation_filterbank, the mode1 partition estimator skips lesser used partition patterns unless they are strongly predicted to be potentially useful.
 	// There's a slight loss in quality with this enabled (around .08 dB RGB PSNR or .05 dB Y PSNR), but up to a 11% gain in speed depending on the other settings.
 	bc7enc_bool m_mode_partition_estimation_filterbank;
