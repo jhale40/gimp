@@ -961,10 +961,11 @@ compress_BC5 (unsigned char       *dst,
   unsigned char block[64], *p;
   int x, y;
 
-  //Test but use g_print("BC5 Compress: w=%d h=%d block_count=%d\n", w, h, block_count);
-  //g_print("BC5 Compress Print Test\n");
+  //Test but use g_message("BC5 Compress: w=%d h=%d block_count=%d\n", w, h, block_count);
+  //g_message("BC5 Compress Print Test\n");
   int int_var = 42;
   g_message("BC5 Compress Print Test : value is %d", int_var);
+  g_message("BC5 Compress: w=%d h=%d block_count=%d\n", w, h, block_count);
 
 #ifdef _OPENMP
 #pragma omp parallel for schedule(dynamic, 256) private(block, p, x, y)

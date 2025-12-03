@@ -43,6 +43,8 @@
 
 #include <libgimp/stdplugins-intl.h>
 
+#include "bc7.h"
+#include "bc7enc.h"
 #include "dds.h"
 #include "ddsread.h"
 #include "dxt.h"
