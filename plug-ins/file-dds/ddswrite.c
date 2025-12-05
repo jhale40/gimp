@@ -846,6 +846,93 @@ write_layer (FILE                *fp,
   gboolean           perceptual_metric;
   gint               flags   = 0;
 
+//================= First BC7 Test ============================================
+
+  gint               dds_format;
+
+  dds_format  = gimp_procedure_config_get_choice_id (config, "compression-format");
+
+  if (dds_format == DDS_COMPRESS_BC7)
+      {
+        // print a message that BC7 was selected
+        g_message("BC7 format selected for DDS export. Print Test : int is %d\n", dds_format);
+
+        //return;
+      }
+  //g_free(dds_format);
+
+//==============================================================================
+
+
+// //================= Second BC7 Test ============================================
+
+
+//   // Existing GIMP variables above
+
+
+//   gint          mip_w, mip_h;
+//   GimpPixelRgn  src_rgn;
+//   guchar       *src_data;
+
+
+//   // Test DDS_FORMAT_BC7 for conflicts with existing enums $$$
+//   gint          dds_format;
+
+//   dds_format  = gimp_procedure_config_get_choice_id (config, "compression-format");
+
+//   g_object_get (config,
+//                 "dds_format", &dds_format,
+//                 NULL);
+
+//   // Loop through mipmap levels
+//   for (level = 0; level < num_mipmaps; level++)
+//   {
+//       // Use mipmap dimensions (mip_w, mip_h)
+
+//       // Get mipmap level data
+
+
+//       if (dds_format == DDS_FORMAT_BC7)
+//       {
+//           for (y = 0; y < mip_h; y += 4)
+//           {
+//               for (x = 0; x < mip_w; x += 4)
+//               {
+//                   // 1. Extract 4x4 block of pixels into a temporary buffer for bc7enc
+//                   bc7enc_compress_block_params enc_params;
+//                   // For first test, use FIXED parameters set to BC7 Max Quality
+//                   bc7enc_compress_block_init_params(&enc_params);
+
+//                   // Buffer for 16 pixels (RGBA 8-bit)
+//                   unsigned char src_block[16 * 4];
+//                   // Buffer for compressed BC7 block
+//                   unsigned char compressed_block[16];
+
+//                   // Fill src_block from src_data at (x, y)
+
+//                   // Might need to call  bc7enc_compress_block_init() first?
+//                   // 2. Compress the block using the bc7enc library function
+//                   bc7enc_compress_block(compressed_block, src_block, &enc_params);
+
+//                   // 3. Write to file stream
+//                   if (fwrite(compressed_block, 1, 16, fp) != 16)
+//                   {
+//                       // Error message
+//                       g_warning("Failed to write BC7 block to DDS file.");
+//                       return;
+//                   }
+//               }
+//           }
+//       }
+
+//       // Release source data if needed
+
+//   }
+
+// //==============================================================================
+
+
+
   g_object_get (config,
                 "perceptual-metric",  &perceptual_metric,
                 NULL);
